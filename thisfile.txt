@@ -1,0 +1,11 @@
+Server: smtp.gmail.com
+User: youremail@gmail.com
+Password: create an app password in gmail.com settings
+To: type an email here
+CC: type in email here
+BCC: this is a hidden CC, type an email here
+Subject: Email subject
+Attachment: photo.jpg (the sample photo I used was just a simple avatar the last airbender jpg)
+Body:
+multiple lines of text representing 
+the body of the email
