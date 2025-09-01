@@ -1,43 +1,29 @@
-sendEmail.java
-This program reads an email template from a file and sends a plain-text email using the Jakarta Mail (formerly JavaMail) API.
+Java Email Application
 
-Features:
-Parses required fields like Server, User, Password, To, CC, BCC, and Subject
+This project is a Java-based email application designed to demonstrate how to send, receive, and manage emails over the Internet using standard email servers. The system is divided into three programs, each building on the previous one to cover key aspects of email functionality.
 
-Extracts the rest of the file as the email body
+The first program, SendEmail, connects to a specified email server and sends a message to a primary recipient, multiple secondary (CC) recipients, and multiple tertiary (BCC) recipients. All email details, including server settings, user credentials, recipients, subject, and body, are provided in a text file that is read at runtime. This approach makes the program flexible and easy to test with different email accounts and configurations.
 
-Sends the email using SMTP with TLS (port 587)
+The second program extends the first by adding support for file attachments. At a minimum, the program can handle one attachment, such as an image file (.jpg, .png) or a compressed file (.zip). This addition demonstrates how Java can construct and send multipart emails that include both text and binary content.
 
-Debug output to verify parsed data
+The third program, GetMail, focuses on receiving messages from an email server. When run with user credentials, it retrieves a list of unread emails and displays them in a numbered format, including the subject line and sender. Users can then rerun the program with the corresponding number to download and view the full contents of a specific email. This simulates a simple email client that provides basic inbox functionality.
 
-Validates presence of all required fields
+Together, these three programs illustrate the essentials of email communication in Java: sending structured messages, handling attachments, and retrieving incoming mail. By working through the project, you gain practical experience with Java’s networking and email APIs, while also learning how real-world email systems operate under the hood.
 
-sendEmailAtt.java
-An extension of sendEmail.java that supports email attachments.
+=============================================================================================================================================================================================
 
-Additional Features:
-Parses an optional Attachment field from the input file
+Here are the key features of your Java Email App that you can list on GitHub:
 
-Validates the file path before sending
+Send Email from File Input – Reads server, user credentials, recipients, subject, and body from a text file and sends the email automatically.
 
-Uses a MimeMultipart to attach the file to the email
+Multiple Recipient Support – Allows one primary recipient, multiple CC (secondary) recipients, and multiple BCC (tertiary) recipients.
 
-Still supports all base features: To, CC, BCC, Subject, Body
+Attachment Handling – Supports sending a file attachment (image or .zip) along with the email.
 
-getMail.java
-This program connects to an IMAP server and retrieves unread emails.
+Inbox Retrieval – Connects to an email server to fetch a list of unread emails, showing subject lines and senders.
 
-Features:
-Takes server, username, and password as input
+Email Selection – Users can download and view the full content of a chosen email by specifying its reference number.
 
-Connects to INBOX using imaps (SSL)
+Command-Line Execution – All programs are run via simple command-line commands for flexibility and testing.
 
-Lists unread emails with sender and subject
-
-Can also display the full content of a selected unread email
-
-Handles both plain text and multipart emails
-
-Supports attachments (prints notice if attachments are found)
-
-⚠This program is only briefly referenced here. Please see inline comments within getMail.java for more details.
+Practical Email Protocol Use – Demonstrates how to interact with email servers for both sending (SMTP) and receiving (POP/IMAP).
